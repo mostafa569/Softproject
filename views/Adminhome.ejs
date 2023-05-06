@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="/css/all.min.css">
+    
+    
+    
+    
+    
+
+</head>
+
+<body >
+   
+        <header class="home"  >
+        
+            <nav>
+                <h1>Manoufia <span>University</span></h1>
+                <ul>
+                    <li><a href=""> <i class="fa-solid fa-house fa-bounce"></i> Department </a></li>
+                    <li><a href=""><i class="fa-solid fa-cable-car fa-flip"></i> Student</a></li>
+                    <li><a href=""><i class="fa-solid fa-receipt fa-fade"></i>Subject </a></li>
+                    
+                </ul>
+                <div>
+                    <input type="checkbox" class="checkbox" id="checkbox">
+                 
+                  <label for="checkbox" class="checkbox-label">
+                    <i class="bx bxs-moon"></i>
+                    <i class="bx bxs-sun"></i>
+                    <span class="ball"></span>
+                  </label>
+                
+                  </div>
+                  
+            </nav>
+           
+           
+    
+        </header>
+        <section class="backgrond">
+            
+        </section>
+
+        <section class="tt1" id="home">
+            
+            <div class="imge">
+                <img src="/images/Code typing-bro 2.svg" alt="" >
+                
+            </div>
+            
+                <section  class="z">
+                    
+            
+                    <div class="b">
+                        <br><br>
+                        <div  class="l" ><h1> <span>Add </span>department </h1></div><br>
+                        <form id="department-addition" action="/admin-area/<%= id %>/add-department" method="post">
+                            
+
+                            <input type="text" placeholder="name" name="name" required><br><br>
+                            <input type="text" placeholder="Code" name="code" required><br><br>
+                            <div class="login" ><i style="color: brown; height: 25px;" class="fa-solid fa-right-from-bracket fa-shake"></i> <input class="nn" type="submit" value="Addition"> <i style="color: brown; height: 25px;" class="fa-solid fa-right-from-bracket  fa-rotate-180 "></i></div> 
+                        </form>
+                       </div>
+                
+                </section>
+                <section  class="z2">
+                    
+            
+                    <div class="b">
+                        <br><br>
+                        <div  class="l" ><h1> <span>Assign </span>course </h1></div><br>
+                        <form id="department-addition" action="/admin-area/<%= id %>/assign-course" method="post">
+                            
+
+                            <input type="text" placeholder="code" name="code" required><br><br>
+                            <input type="text" placeholder="Doctor ID" name="DocId" required><br><br>
+                            <div class="login" > <i style="color: brown; height: 25px;" class="fa-solid fa-right-from-bracket fa-shake"></i><input class="nn" type="submit" value="Addition"> <i style="color: brown; height: 25px;" class="fa-solid fa-right-from-bracket  fa-rotate-180 "></i></div> 
+                        </form>
+                       </div>
+                
+                </section>
+                
+               
+
+        </section>
+
+
+
+
+           <section class="tt1" id="mohamed">
+            <div class="os">
+                <i class="fa-solid fa-forward-step fa-shake" style="color: #511f1f; height: 50px; padding-right:210px;"></i> 
+                <h2 class="h1">Student</h2>
+                 <i class="fa-solid fa-backward-step fa-shake" style="color: #511f1f; height: 50px; padding-left:210px;"></i>
+            </div>
+
+            <div class="img">
+                <img class="mo" src="/images/Code typing-amico.svg" alt="" >
+                
+            </div>
+            
+                
+
+                    <section  class="yy1">
+                    
+            
+                        <div class="material">
+                            <br><br>
+                            <div  class="l" ><h1> <span>Add </span>student</h1></div><br>
+                            <form id="student-addition" action="/admin-area/<%= id %>/add-student" method="post">
+                                <input type="text" placeholder="Name" name="name" required><br><br>
+                                <select class="select" name="department" required>
+                                    <option value="" disabled selected>Select department</option>
+                                    <% departments.forEach((dept) => { %>
+                                      <option value="<%= dept.name %>"><%= dept.name %></option>
+                                    <% }); %>
+                                  </select><br><br>
+
+                                <input list="levels" placeholder="Level" name="level" required>
+                                  <datalist id="levels">
+                                  
+                                      <option value="1">
+                                        <option value="2">
+                                            <option value="3">
+                                                <option value="4">
+                                         
+                                  
+                                </datalist><br><br>
+                                <input type="text" placeholder="nationalid" name="nationalid" required><br><br>
+                                <div class="login">
+                                    <i style="color: brown; height: 25px;" class="fa-solid fa-right-from-bracket fa-shake"></i> 
+                                    <input class="nn" type="submit" value="Addition"> 
+                                    <i style="color: brown; height: 25px;" class="fa-solid fa-right-from-bracket  fa-rotate-180 "></i>
+                                </div> 
+                            </form>
+                           </div>
+                    
+                    </section>
+                    
+                  
+           </section>
+           
+        </section>
+
+
+
+
+        <section class="tt5" id="accont">
+            <div >
+                <i class="fa-solid fa-forward-step fa-shake" style="color: #511f1f; height: 50px; padding-right:210px;"></i> 
+                 <h2 class="h1">Doctor</h2> 
+                 <i class="fa-solid fa-backward-step fa-shake" style="color: #511f1f; height: 50px; padding-left:210px;"></i>
+            </div>
+
+         <div class="img">
+             <img class="mo" src="/images/pexels-mateusz-dach-450035.jpg" alt="" >
+             
+         </div>
+         
+             
+
+                 <section  class="yy2">
+                 
+         
+                     <div class="accont">
+                         <br><br>
+                         <div  class="pp1"  ><h1><span> Add</span> doctor</h1></div><br>
+                         <form id="doctor-addition" action="/admin-area/<%= id %>/add-doctor" method="post">
+                             <input type="text" placeholder="name" name="name" required><br><br>
+                             <input type="text" placeholder="nationalid" name="nationalid" required><br><br>
+                             <select class="select" name="department" required>
+                                <option value="" disabled selected>Select department</option>
+                                <% departments.forEach((dept) => { %>
+                                  <option value="<%= dept.name %>"><%= dept.name %></option>
+                                <% }); %>
+                              </select><br><br>
+                             <div class="login" ><i style="color: brown; height: 25px;" class="fa-solid fa-right-from-bracket fa-shake"></i>
+                                 <input class="nn" type="submit" value="Addition"> 
+                                 <i style="color: brown; height: 25px;" class="fa-solid fa-right-from-bracket  fa-rotate-180 "></i>
+                            </div> 
+                         </form>
+                        </div>
+                 
+                 </section>
+                 
+               
+        </section>
+
+        <section class="tt5">
+
+            <div class="ms">
+                <i class="fa-solid fa-forward-step fa-shake" style="color: #511f1f; height: 50px; padding-right:210px;"></i> 
+                <h2 class="h1">Course</h2> 
+                <i class="fa-solid fa-backward-step fa-shake" style="color: #511f1f; height: 50px; padding-left:210px;"></i>
+            </div>
+
+         <div class="img">
+             <img class="mo" src="/images/Digital tools-amico.svg" alt="" >
+             
+         </div>
+
+            <section class="e">
+                        
+                
+                <div class="g">
+                    <br><br>
+                    <div  class="l" ><h1> <span>Add </span>course</h1></div><br>
+                    <form id="course-addition" action="/admin-area/<%= id %>/add-course" method="post">
+                        <input type="text" placeholder="Name" name="name" required ><br><br>
+                        <input type="text" placeholder="Code" name="code" required><br><br>
+                        <input type="text" placeholder="prereq" name="prereq" ><br><br>
+                        <select class="select" name="department" required>
+                            <option value="" disabled selected>Select department</option>
+                            <% departments.forEach((dept) => { %>
+                              <option value="<%= dept.name %>"><%= dept.name %></option>
+                            <% }); %>
+                          </select>
+                        <div id="container" class="container" ></div>
+    
+	                     <!-- <button clacc="nn" onclick="addNewInputs()">Add Two New Inputs in Same Line</button>
+                         <br><br>
+	                    <iframe class="form" id="output-iframe" name="output-iframe" width="50%" height="80"></iframe><br><br> -->
+                        <br><br>
+                        <div class="login"  >
+                            <i style="color: brown; height: 25px;" class="fa-solid fa-right-from-bracket fa-shake"></i>
+                             <input class="nn" type="submit" value="Addition"> 
+                             <i style="color: brown; height: 25px;" class="fa-solid fa-right-from-bracket  fa-rotate-180 "></i>
+                        </div> 
+                    </form>
+                   </div>
+            
+            </section>
+        </section>
+           <script>
+            const checkbox = document. getElementById("checkbox")
+            checkbox.addEventListener("change", () => 
+           { document.body.classList.toggle("dark")})
+          </script>
+          <script src="/all.min.js"></script>
+          <script>
+            var inputIndex = 0;
+    
+            function addNewInputs() {
+                // $$$$$$$$
+                var newContainer = document.createElement("div");
+                newContainer.classList.add("input-container");
+                // $$$$$INPUT TEXT
+                var newInput1 = document.createElement("input");
+                newInput1.type = "text";
+                newInput1.name = "Lin" + inputIndex;
+                console.log(newInput1.name)
+                // Append the new input to the new container
+                newContainer.appendChild(newInput1);
+                // Append content
+                document.getElementById("container").appendChild(newContainer);
+                document.getElementById("container").appendChild(document.createElement("br"));
+                // iframe
+                var iframeDoc = document.getElementById("output-iframe").contentWindow.document;
+                iframeDoc.open();
+                iframeDoc.write("<html><head></head><body>" + document.getElementById("container").innerHTML + "</body></html>");
+                iframeDoc.close();
+                inputIndex++;
+            }
+        </script> 
+
+
+
+
+
+
+    
+
+
+
+
+
+
+    
+</body>
+</html>
+
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: "josefin sans", sans-serif;
+    font-size: 18px;
+    color: white;
+}
+.home{
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    background-color:rgb(0, 0, 0);
+}
+h1{
+    font-size: 2.2rem;
+    letter-spacing: 0.12rem;
+    cursor: pointer;
+    color: aliceblue;
+}
+span{
+    color: brown;
+}
+nav{
+    padding-left: 8%;
+    padding-right: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0.8rem 1.5rem;  
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.4s;
+}
+nav ul li a:hover{
+    color: red;
+    border: 1px solid white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+body{
+    font-family: "montserrat" , sans-serif;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 100vh;
+    margin: 0;
+    transition: background 0.2s linear
+  }
+  body.dark{
+    background-color: #292c35;
+  }
+  body.dark h1, body.dark .support a{
+    color: white;
+  }
+  .checkbox{
+    opacity: 0;
+    position: absolute;
+  }
+  .checkbox-label{
+    background-color: #646464;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .bxs-sun{
+    color: blue;
+  }
+  .bxs-moon{
+    color: aquamarine;
+  }
+  .checkbox-label .ball{
+    background-color: black;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+  .checkbox:checked + .checkbox-label .ball{
+    transform: translateX(24px);
+  }
+  .imge{
+    float: right;
+    width: 45%;
+    height: 200px;
+    padding-top: 200px;
+    padding-right: 100px;
+}
+.z{
+    width: 45%;
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-bottom: 10px;
+}
+.z2{
+    width: 45%;
+   
+    padding-left: 100px;
+    padding-bottom: 10px;
+}
+.b{
+    width:100%;
+    height:350px;
+    text-align: center; 
+    border-radius: 20px;
+    background: rgb(0, 0, 0);
+}
+.b:hover{
+    transform: scale(1.01);
+}
+.l{
+    width: 100%;
+    height: 40px;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+}
+input{
+    width: 90%;
+    height: 40px;
+    outline:none ;
+    border: none;
+    background: rgb(41, 39, 39);
+    margin: 8px 0;
+    border-radius: 10px;
+    padding: 4px;
+    color: rgb(0, 0, 0);
+}
+input:focus{
+    background: rgb(255, 255, 255);
+    transform: scale(1.1);
+}
+.nn{
+    font: bold 25px Arial;
+    text-decoration: none;
+    background-color: #4d4b4b;
+    color: #18181b;
+    padding: 6px 70px 6px 70px;
+    border-top: 1px solid #000dff;
+    border-right: 1px solid #061b56;
+    border-bottom: 1px solid #0e1061;
+    border-left: 1px solid #1114c6;
+    border-radius: 5px;
+    width: 50%; 
+}
+.e{
+    padding-left:100px ;
+    width: 45%;
+    padding-top: 70px;
+}
+.e:hover{
+    transform: scale(1.01);
+}
+.g{
+    width:100%;
+    height: 550px;
+    text-align: center;
+    border-radius: 20px;
+    background: rgba(0, 0, 0);   
+}
+a:focus{
+    background: rgb(0, 0, 0);
+    transform: scale(1.1);
+}
+.tt1{
+    width: 100%;
+    height: 100vh;
+}
+ .h1{
+    color: rgb(0, 0, 0);
+    
+    font-size: 40px;
+	letter-spacing: 5px ;
+	text-transform: uppercase;
+	line-height: 1;
+	height: 100px;
+	width: 12%;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center ;
+	
+ }
+ .h1::before{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 40px;
+	height: 40px;
+	background-color: rgb(124, 24, 24);
+	animation: move 6s linear infinite;
+	z-index: -1;
+ }
+ @keyframes move{
+	0%,100%{
+		left: 0;
+	}
+	50%{
+		left: 100%;
+	}
+ }
+ 
+ .os{
+    padding-top: 20px;
+ }
+ .img{
+    float: right;
+    width: 50%;
+    height: 500px;
+    padding-top: 140px;
+}
+.mo{
+    width: 80%;
+    height: 400px;
+}
+.material{
+    width:100%;
+    height:500px;
+    text-align: center;
+    border-radius: 20px;
+    background: rgb(0, 0, 0);
+}
+.material:hover{
+    transform: scale(1.01);
+}
+.pp1{
+    width: 100%;
+    height: 40px;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+}
+.yy1{
+    width: 45%;
+    padding-left: 100px; 
+    padding-top: 100px;
+}
+a:focus{
+    background: rgb(248, 248, 248);
+    transform: scale(1.1);
+}
+.accont{
+    width:100%;
+    height:400px;
+    text-align: center;
+    border-radius: 20px;
+    background: rgb(0, 0, 0);
+}
+.yy2{
+    width: 45%;
+    padding-left: 100px; 
+    padding-top: 110px;
+}
+.backgrond{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;   
+    align-items: center;
+    background: url("/images/pexels-mateusz-dach-450035.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+   
+.tt5{
+    height: 700px;
+    padding-bottom:500px;
+}
+.select{
+    border-radius: 8px;
+    width: 90%;
+    height: 40px;
+    background: #292c35;
+    color: white;
+    
+}
+.ms{
+  padding-top: -150;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+</style>

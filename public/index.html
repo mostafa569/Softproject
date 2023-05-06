@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="z">
+    <div class="b">
+      <br>
+      <h1 class="l">al-manoufia <span>University</span></h1>
+      <form id="login-form" action="/login" method="POST">
+        <input type="text" name="username" placeholder="user" required>
+        <input type="password" name="password" placeholder="password" required>
+        <div>type</div><br>
+        <div class="x">
+          <label>Student</label>  
+          <input type="radio" value="Student" name="type">
+          <label>Admin</label>
+          <input type="radio" value="Admin" name="type">
+          <label>Doctor</label>
+          <input type="radio" value="Doctor" name="type">
+        </div><br>
+        <div class="login">
+          <a href="">forget password</a>
+        </div><br>
+        <div class="login"><button type="submit" class="nn" rel="jhgcv">login</button></div> 
+      </form>
+      <div class="imge">
+        <img class="v" src="Code typing-bro 2.svg" alt="" > 
+      </div>
+    </div>
+       <div>
+        <input type="checkbox" class="checkbox" id="checkbox">
+      <label for="checkbox" class="checkbox-label">
+        <i class="bx bxs-moon"></i>
+        <i class="bx bxs-sun"></i>
+        <span class="ball"></span>
+      </label>
+      </div>
+      <script>
+        const checkbox = document. getElementById("checkbox")
+        checkbox.addEventListener("change", () => 
+       { document.body.classList.toggle("dark")})
+
+       const loginForm = document.getElementById("login-form");
+        const radioButtons = document.querySelectorAll(
+          'input[type=radio][name="type"]'
+        );
+        radioButtons.forEach((radio) => {
+          radio.addEventListener("change", (event) => {
+            if (event.target.value === "Student") {
+              loginForm.action = "/login/student";
+            } else if (event.target.value === "Admin") {
+              loginForm.action = "/login/admin";
+            } else if (event.target.value === "Doctor") {
+              loginForm.action = "/login/doctor";
+            }
+          });
+        });
+
+      </script>
+  </div>
+</body>
+</html>
